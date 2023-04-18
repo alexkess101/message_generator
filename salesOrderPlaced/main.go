@@ -13,6 +13,8 @@ import (
 	"bitbucket.org/smartystreets/message-registry/v2/sales"
 )
 
+var Version string
+
 func main() {
 	now := time.Now()
 	message := sales.OrderPlaced{
@@ -33,7 +35,7 @@ func main() {
 		Items:             nil,
 	}
 
-	args := utils.GetArguments()
+	args := utils.GetArguments(Version)
 	messageValue := reflect.ValueOf(&message).Elem()
 
 	for i := 0; i < len(args); i += 2 {

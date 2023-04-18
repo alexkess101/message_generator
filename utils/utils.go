@@ -9,11 +9,9 @@ import (
 	"strings"
 )
 
-var Version = "dev"
-
-func GetArguments() []string {
+func GetArguments(version string) []string {
 	args := os.Args[1:]
-	fmt.Printf("Running version: %s\n", Version)
+	fmt.Printf("Running version: %s\n", version)
 
 	if len(args) == 0 || len(args)%2 != 0 {
 		fmt.Println("Error: Only accepts even number of arguments")

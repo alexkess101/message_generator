@@ -13,6 +13,8 @@ import (
 	"bitbucket.org/smartystreets/message-registry/v2/meta"
 )
 
+var Version string
+
 func main() {
 	now := time.Now()
 	message := billing.RefundRequested{
@@ -23,7 +25,7 @@ func main() {
 		Reason:        "test",
 	}
 
-	args := utils.GetArguments()
+	args := utils.GetArguments(Version)
 	messageValue := reflect.ValueOf(&message).Elem()
 
 	for i := 0; i < len(args); i += 2 {
