@@ -32,7 +32,15 @@ func main() {
 		Reason:            "test",
 		Terms:             0,
 		AgreementID:       "",
-		Items:             nil,
+		Items: []sales.OrderItem{
+			{
+				ItemID:     11633659584,
+				PlanID:     78608848,
+				Lookups:    5000,
+				UnitAmount: 5400,
+				Amount:     5400,
+			},
+		},
 	}
 
 	args := utils.GetArguments(Version)
