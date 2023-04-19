@@ -49,5 +49,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	utils.PrintSuccessMessage("sales:order-item-cancelled")
+	fmt.Print("Success!! ")
+	utils.PrintBold("sales:order-item-cancelled")
+	fmt.Print(" copied to clipboard\n")
 }

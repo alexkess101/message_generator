@@ -17,6 +17,7 @@ var Version string
 
 func main() {
 	now := time.Now()
+	orderItemID := utils.GetRandomUint64ID()
 	message := sales.OrderPlaced{
 		Metadata:          meta.Meta{Timestamp: now},
 		Timestamp:         now,
@@ -34,7 +35,7 @@ func main() {
 		AgreementID:       "",
 		Items: []sales.OrderItem{
 			{
-				ItemID:     11633659584,
+				ItemID:     orderItemID,
 				PlanID:     78608848,
 				Lookups:    5000,
 				UnitAmount: 5400,
@@ -62,5 +63,9 @@ func main() {
 		os.Exit(1)
 	}
 
-	utils.PrintSuccessMessage("sales:order-placed")
+	fmt.Print("Success!! ")
+	utils.PrintBold("sales:order-placed")
+	fmt.Print(" copied to clipboard\n")
+	utils.PrintBold("OrderItemID: ")
+	fmt.Printf("%v\n", orderItemID)
 }

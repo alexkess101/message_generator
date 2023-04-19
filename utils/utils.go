@@ -2,11 +2,13 @@ package utils
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"os/exec"
 	"reflect"
 	"strconv"
 	"strings"
+	"time"
 )
 
 func GetArguments(version string) []string {
@@ -68,12 +70,15 @@ func WriteClipboard(str string) error {
 	return nil
 }
 
-func PrintSuccessMessage(context string) {
-	fmt.Print("Success!! ")
+func GetRandomUint64ID() uint64 {
+	rand.Seed(time.Now().UnixNano())
+	return rand.Uint64()
+}
+
+func PrintBold(value string) {
 	fmt.Print("\033[4m")
 	fmt.Print("\033[1m")
-	fmt.Printf("%s", context)
+	fmt.Printf("%s", value)
 	fmt.Print("\033[0m")
 	fmt.Print("\033[0m")
-	fmt.Print(" test copied to clipboard")
 }

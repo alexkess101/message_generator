@@ -44,5 +44,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	utils.PrintSuccessMessage("billing:refund-requested")
+	fmt.Print("Success!! ")
+	utils.PrintBold("billing:refund-requested")
+	fmt.Print(" copied to clipboard\n")
 }

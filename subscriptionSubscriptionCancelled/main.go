@@ -46,6 +46,7 @@ func main() {
 		fmt.Println("Error:", err)
 		os.Exit(1)
 	}
-
-	utils.PrintSuccessMessage("subscription:subscription-cancelled")
+	fmt.Print("Success!! ")
+	utils.PrintBold("subscription:subscription-cancelled")
+	fmt.Print(" copied to clipboard\n")
 }
