@@ -38,6 +38,8 @@ func ApplyValueToMessage(fieldName, fieldValue string, messageValue reflect.Valu
 		field.SetInt(fieldValueInt)
 	case reflect.Uint64:
 		field.SetUint(uint64(fieldValueInt))
+	case reflect.Uint16:
+		field.SetUint(uint64(fieldValueInt))
 	case reflect.String:
 		field.SetString(fieldValue)
 	}
