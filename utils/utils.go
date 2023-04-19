@@ -42,6 +42,9 @@ func ApplyValueToMessage(fieldName, fieldValue string, messageValue reflect.Valu
 		field.SetUint(uint64(fieldValueInt))
 	case reflect.String:
 		field.SetString(fieldValue)
+	default:
+		fmt.Println("Error: type not handled")
+		os.Exit(1)
 	}
 }
 
