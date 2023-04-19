@@ -66,6 +66,6 @@ func main() {
 	fmt.Print("Success!! ")
 	utils.PrintBold("sales:order-placed")
 	fmt.Print(" copied to clipboard\n")
-	utils.PrintBold("OrderItemID: ")
-	fmt.Printf("%v\n", orderItemID)
+	utils.PrintBold("OrderItemID:")
+	fmt.Printf(" %v\n", orderItemID)
 }
